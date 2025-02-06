@@ -74,16 +74,16 @@ async def create_trash_plot(bin1: str, day: str, bin_name: str):
 
 @app.get("/")
 async def index():
-    return {"message": "Welcome to FastAPI Trash Bin API"}
+    return {"message": "Welcome to FastAPI Trash Bin API 要查詢API請到/docs"}
 
 @app.get("/general_status")
 async def general_status(bin1: str = Query("緯育八樓"), day: str = Query('2025-01-20')):
-    img_io = await create_trash_plot(bin1, day, "一般垃圾")
+    img_io = await create_trash_plot(bin1, day, "一般垃圾目前用量")
     return StreamingResponse(img_io, media_type="image/png")
 
 @app.get("/recycle_status")
 async def recycle_status(bin1: str = Query("緯育八樓"), day: str = Query('2025-01-20')):
-    img_io = await create_trash_plot(bin1, day, "資源回收")
+    img_io = await create_trash_plot(bin1, day, "資源回收目前用量")
     return StreamingResponse(img_io, media_type="image/png")
 
 if __name__ == "__main__":
