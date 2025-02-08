@@ -4,9 +4,9 @@
 python -m venv status
 ```
 
-## 啟動環境
+## 啟動環境 可以只打字首+tab(鍵) 例如 status = s(tab)
 ```
-.\status\script\activate
+.\status\Scripts\activate
 ```
 
 ## 安裝套件
